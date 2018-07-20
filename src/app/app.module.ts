@@ -7,8 +7,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PokemonsComponent } from './pages/pokemons/pokemons.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BerriesComponent } from './pages/berries/berries.component';
-
-import { AppRoutingModule } from './app.routing.module'
+import { AppRoutingModule } from './app.routing.module';
+import { FooterComponent } from './footer/footer.component'
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonService } from './services/pokemon.service';
 
 
 
@@ -19,14 +21,18 @@ import { AppRoutingModule } from './app.routing.module'
     PokemonsComponent,
     HomeComponent,
     BerriesComponent,
+    FooterComponent,
 
   ],
   imports: [
     BrowserModule,
     MaterializeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PokemonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
